@@ -17,7 +17,6 @@
 }
 
 .header-text {
-  text-align: center;
   font-size: 60px;
   color: white;
   text-shadow: 1px 1px 2px #000000;
@@ -25,11 +24,49 @@
   align-self: center;
 }
 
+.features {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background: #2962FF;
+  color: #ffffff;
+}
+
+.feature {
+  padding: 30px;
+  margin: 30px;
+  background: #039BE5;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-icon {
+  font-size: 120px;
+  flex: auto;
+  height: auto;
+  width: auto;
+}
+
+.feature-text {
+  flex: auto;
+  justify-self: center;
+  align-self: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 @media only screen and (max-width: 600px){
-  .header {
+  .header, .features {
     flex-direction: column;
+  }
+  .feature {
+    flex-direction: row;
   }
   .header-text {
     padding: 20px;
+    text-align: center;
   }
 }
