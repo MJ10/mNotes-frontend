@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  background: #E53935;
+  padding-top: 74px;
+}
+
+.header-icon {
+  font-size: 350px;
+  align-self: center;
+  height: auto;
+  width: auto;
+  flex: 1 1 auto;
+}
+
+.header-text {
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+@media only screen and (max-width: 600px){
+  .header {
+    flex-direction: column;
+  }
+  .header-text {
+    padding: 20px;
+  }
+}
