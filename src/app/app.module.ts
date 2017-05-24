@@ -9,11 +9,17 @@ import { AppComponent } from './app.component';
 
 import { MdToolbarModule, MdIconModule, MdMenuModule, MdButtonModule, MdDialogModule } from '@angular/material';
 import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
