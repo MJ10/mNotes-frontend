@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MdToolbarModule, MdIconModule, MdMenuModule, MdButtonModule, MdDialogModule } from '@angular/material';
+import {
+  MdToolbarModule, MdIconModule, MdMenuModule, MdButtonModule, MdDialogModule,
+  MdCardModule, MdInputModule
+} from '@angular/material';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -31,6 +34,8 @@ import { RegisterComponent } from './components/register/register.component';
     MdMenuModule,
     MdButtonModule,
     MdDialogModule,
+    MdCardModule,
+    MdInputModule,
     AppRoutingModule
   ],
   entryComponents: [AboutComponent],
