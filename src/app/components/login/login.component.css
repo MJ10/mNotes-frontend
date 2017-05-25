@@ -1,13 +1,28 @@
 .container {
   padding-top: 74px;
-  display: flex;
   width: 100%;
-  /*height: 80vh;*/
-  /*align-content: center;*/
-  justify-content: center;
+  height: 89%;
   background: #FFC400;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-md-card {
-  height: auto;
+.form-container {
+  background: #2962FF;
+  align-self: center;
+  justify-self: center;
+  width: 33%;
+  margin: 20px;
+  padding: 30px;
+}
+
+.inp {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container{
+    width: 100%;
+  }
 }
