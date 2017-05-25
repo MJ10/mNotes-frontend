@@ -3,14 +3,14 @@
     <h3 style="color: #ffffff">Please login to continue</h3>
     <form>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Username">
+        <input mdInput [(ngModel)]="username" name="username" placeholder="Username" #usernamefield>
       </md-input-container>
       <br>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Password" type="password">
+        <input mdInput [(ngModel)]="password" name="password" placeholder="Password" type="password" #pass>
       </md-input-container>
       <br><br>
-      <button md-raised-button color="warn">Login</button>
+      <button md-raised-button color="warn" (click)="onLogin()">Login</button>
     </form>
   </div>
 </div>

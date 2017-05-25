@@ -1,5 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 import {MdSnackBar} from '@angular/material';
 
 @Component({
@@ -19,7 +21,7 @@ export class RegisterComponent {
   password: String;
   cPass: String;
 
-  constructor(private vs: ValidateService, public snackbar: MdSnackBar) { }
+  constructor(private vs: ValidateService, public snackbar: MdSnackBar, private auth: AuthService, private router:Router) { }
 
   onRegister() {
     const user = {
@@ -55,5 +57,26 @@ export class RegisterComponent {
       this.passfield.nativeElement.focus();
       return false;
     }
+
+    this.auth.register(user).subscribe(resp => {
+      if(resp.success){
+        let success = this.snackbar.open('You have successfully registered!', 'Login', {duration: 5000});
+        success.onAction().subscribe(() => {
+          this.router.navigateByUrl('/login');
+          success.dismiss();
+        });
+      } else {
+        let err = this.snackbar.open('Registration Failed', 'Try Again', { duration: 5000});
+        err.onAction().subscribe(() => {
+          this.name = '';
+          this.username = '';
+          this.email = '';
+          this.password = '';
+          this.cPass = '';
+          this.namefield.nativeElement.focus();
+          err.dismiss();
+        });
+      }
+    })
   }
 }

@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { ValidateService } from './services/validate.service';
     AppRoutingModule
   ],
   entryComponents: [AboutComponent],
-  providers: [ ValidateService ],
+  providers: [ ValidateService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
