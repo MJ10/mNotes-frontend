@@ -1,28 +1,28 @@
 <div class="container">
   <div class="mat-elevation-z3 form-container">
-    <h3 style="color: #ffffff">Please login to continue</h3>
+    <h3>Please register to gain access to all our services</h3>
     <form>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Name">
+        <input mdInput [(ngModel)]="name" name="name" placeholder="Name" #namefield>
       </md-input-container>
       <br>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Username">
+        <input mdInput [(ngModel)]="username" name="username" placeholder="Username">
       </md-input-container>
       <br>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Email" type="email">
+        <input mdInput [(ngModel)]="email" name="email" placeholder="Email" type="email" #emailfield>
       </md-input-container>
       <br>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Password" type="password">
+        <input mdInput [(ngModel)]="password" name="password" placeholder="Password" type="password" #pass>
       </md-input-container>
       <br>
       <md-input-container class="inp" color="warn">
-        <input mdInput placeholder="Confirm Password" type="password">
+        <input mdInput [(ngModel)]="cPass" name="cPass" placeholder="Confirm Password" type="password">
       </md-input-container>
       <br><br>
-      <button md-raised-button color="warn">Login</button>
+      <button md-raised-button color="warn" (click)="onRegister()">Register</button>
     </form>
   </div>
 </div>

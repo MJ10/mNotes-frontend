@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 
 import {
   MdToolbarModule, MdIconModule, MdMenuModule, MdButtonModule, MdDialogModule,
-  MdCardModule, MdInputModule
+  MdCardModule, MdInputModule, MdSnackBarModule
 } from '@angular/material';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+
+import { ValidateService } from './services/validate.service';
 
 @NgModule({
   declarations: [
@@ -36,10 +38,11 @@ import { RegisterComponent } from './components/register/register.component';
     MdDialogModule,
     MdCardModule,
     MdInputModule,
+    MdSnackBarModule,
     AppRoutingModule
   ],
   entryComponents: [AboutComponent],
-  providers: [],
+  providers: [ ValidateService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
