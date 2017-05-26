@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MdDialog} from '@angular/material';
 import { AboutComponent } from './components/about/about.component';
+import {AuthService} from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,8 @@ import { AboutComponent } from './components/about/about.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  loggedIn = false;
 
-  constructor(public dialog: MdDialog){}
+  constructor(public dialog: MdDialog, private auth: AuthService) { }
 
   viewAboutDialog() {
     this.dialog.open(AboutComponent);

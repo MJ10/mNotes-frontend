@@ -59,14 +59,14 @@ export class RegisterComponent {
     }
 
     this.auth.register(user).subscribe(resp => {
-      if(resp.success){
-        let success = this.snackbar.open('You have successfully registered!', 'Login', {duration: 5000});
+      if (resp.success) {
+        const success = this.snackbar.open('You have successfully registered!', 'Login', {duration: 5000});
         success.onAction().subscribe(() => {
           this.router.navigateByUrl('/login');
           success.dismiss();
         });
       } else {
-        let err = this.snackbar.open('Registration Failed', 'Try Again', { duration: 5000});
+        const err = this.snackbar.open('Registration Failed', 'Try Again', { duration: 5000});
         err.onAction().subscribe(() => {
           this.name = '';
           this.username = '';
@@ -77,6 +77,6 @@ export class RegisterComponent {
           err.dismiss();
         });
       }
-    })
+    });
   }
 }

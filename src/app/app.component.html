@@ -6,7 +6,7 @@
     <button md-menu-item (click)="viewAboutDialog()">
       <span>About</span>
     </button>
-    <button *ngIf="loggedIn" md-menu-item>
+    <button *ngIf="auth.isLoggedIn() == true" md-menu-item>
       <span>Logout</span>
     </button>
   </md-menu>
