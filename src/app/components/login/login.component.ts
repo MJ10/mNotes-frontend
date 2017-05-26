@@ -22,7 +22,7 @@ export class LoginComponent {
       username: this.username,
       password: this.password
     };
-    
+
     if(!this.username){
       this.snackbar.open('Please enter username!', null, {duration: 1000});
       this.usernamefield.nativeElement.focus();
@@ -36,12 +36,13 @@ export class LoginComponent {
   }
 
     this.auth.authenticate(user).subscribe(resp => {
-      if(resp.success) {
-        this.snackbar.open('Successfully logged in!');
+      if (resp.success) {
+        this.snackbar.open('Successfully logged in!', null, { duration: 1000 });
         this.auth.storeAuthData(resp);
+        this.router.navigateByUrl('/');
       } else {
         this.password = '';
-        this.snackbar.open(resp.msg);
+        this.snackbar.open(resp.msg, null, { duration: 2000 });
         this.passfield.nativeElement.focus();
       }
     });
