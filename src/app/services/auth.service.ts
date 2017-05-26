@@ -24,6 +24,12 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  logout() {
+    this.user = null;
+    this.token = null;
+    localStorage.clear();
+  }
+
   storeAuthData(data) {
     localStorage.setItem('id_token', data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
