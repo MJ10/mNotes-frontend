@@ -11,15 +11,17 @@ import {
   MdToolbarModule, MdIconModule, MdMenuModule, MdButtonModule, MdDialogModule,
   MdCardModule, MdInputModule, MdSnackBarModule
 } from '@angular/material';
+
+import { MainComponent } from './components/main/main.component';
 import { AboutComponent } from './components/about/about.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
-import { MainComponent } from './components/main/main.component';
-import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule
   ],
   entryComponents: [AboutComponent],
-  providers: [ ValidateService, AuthService ],
+  providers: [ ValidateService, AuthService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
