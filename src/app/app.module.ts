@@ -12,20 +12,24 @@ import {
   MdCardModule, MdInputModule, MdSnackBarModule
 } from '@angular/material';
 import { AboutComponent } from './components/about/about.component';
-import { HomeComponent } from './components/home/home.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { MainComponent } from './components/main/main.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    HomeComponent,
+    WelcomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MainComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
