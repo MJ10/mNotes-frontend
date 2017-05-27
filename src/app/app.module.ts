@@ -21,6 +21,8 @@ import { HomeComponent } from './components/home/home.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { WebsocketService } from './services/websocket.service';
+import { NotesService } from './services/notes.service';
 import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
@@ -49,7 +51,7 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule
   ],
   entryComponents: [AboutComponent],
-  providers: [ ValidateService, AuthService, AuthGuard ],
+  providers: [ ValidateService, AuthService, AuthGuard, NotesService, WebsocketService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
