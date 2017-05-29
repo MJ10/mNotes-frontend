@@ -13,14 +13,14 @@ export class AuthService {
   register(user) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/register', user, { headers: headers })
+    return this.http.post('http://localhost:3000/auth/register', user, { headers: headers })
       .map(res => res.json());
   }
 
   authenticate(user) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user, { headers: headers })
+    return this.http.post('http://localhost:3000/auth/authenticate', user, { headers: headers })
       .map(res => res.json());
   }
 
